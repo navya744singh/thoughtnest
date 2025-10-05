@@ -32,16 +32,16 @@ export default function Contact() {
 
                     <div className="space-y-4">
                         <p className="text-lg">
-                            📍 <span className="text-muted-foreground">250 Market St, San Francisco, CA 94105</span>
+                            📍 <span className="text-muted-foreground">902, G-Block, Bandra Kurla Complex (BKC), Bandra East, Mumbai, Maharashtra 400051, India</span>
                         </p>
                         <p className="text-lg">
-                            📧 <a href="mailto:tnblogconnect@gmail.com" className="underline hover:text-orange-600">
-                                tnblogconnect@gmail.com
+                            📧 <a href="mailto:info@thoughtnest.in" className="underline hover:text-orange-600">
+                                info@thoughtnest.in
                             </a>
                         </p>
                         <p className="text-lg">
-                            📞 <a href="tel:+14155554376" className="underline hover:text-orange-600">
-                                +1 (415) 555-4376
+                            📞 <a href="tel:+912248937621" className="underline hover:text-orange-600">
+                                +91 22 4893 7621
                             </a>
                         </p>
                     </div>

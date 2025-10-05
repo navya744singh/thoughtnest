@@ -35,7 +35,7 @@ export default function About() {
                         </p>
                     </div>
                     <div className="bg-gradient-to-tr from-orange-500/30 to-orange-700/40 rounded-2xl h-80 lg:h-80 shadow-xl relative">
-                        <Image src="https://images.pexels.com/photos/4240545/pexels-photo-4240545.jpeg" alt="Post" fill className="p-6 object-cover" />
+                        <Image src="/about.webp" alt="Post" fill className="p-6 object-cover" />
                     </div>
                 </motion.div>
 

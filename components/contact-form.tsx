@@ -1,6 +1,8 @@
 "use client"
 import { ContactFormState, handleContact } from "@/action/server"
 import { useActionState } from "react"
+import Form from 'next/form'
+
 
 export default function ContactForm() {
     const initialState: ContactFormState = {
@@ -10,7 +12,7 @@ export default function ContactForm() {
     const [state, action, isPending] = useActionState(handleContact, initialState)
     return (
         <>
-            <form action={action} className="space-y-6">
+            <Form action={action} className="space-y-6">
                 {/* Name */}
                 <div>
                     <label className="block text-sm font-medium mb-2 text-gray-900 dark:text-white">Name <span className="text-red-500">*</span></label>
@@ -55,7 +57,7 @@ export default function ContactForm() {
                     {state.errors?.formError && <p className="text-sm text-red-600 mt-2 font-semibold bg-red-200 border-red-500 p-3 rounded-md">{state.errors?.formError}</p>}
                     {state.success && <p className="text-sm text-green-600 mt-2 font-semibold bg-green-200 border-green-500 p-3 rounded-md">{state.success}</p>}
                 </div>
-            </form>
+            </Form>
         </>
     )
 }

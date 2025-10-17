@@ -1,11 +1,11 @@
-import BlogSection from "@/components/blog/blog-section";
 import BlogPostsSkeleton from "@/components/blog/blog-post-skeleton";
 import HeroSection from "@/components/header/hero-section";
 import SearchBar from "@/components/header/search-bar";
 import SearchBarSkeleton from "@/components/header/search-bar-skeleton";
 import * as motion from "motion/react-client";
 import { Metadata } from "next";
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
+const BlogSection = lazy(() => import("@/components/blog/blog-section"));
 
 export const metadata: Metadata = {
     title: "Blog – Stories That Inspire, Inform and Connect You",

@@ -4,11 +4,12 @@ import { Button } from "../ui/button";
 import { useTransition } from "react";
 import { deleteBlog } from "@/action/server";
 import toast from "react-hot-toast";
+import Form from "next/form";
 
 export default function DeleteBlog({ blogId }: { blogId: string }) {
     const [isPending, startTransition] = useTransition();
     return (
-        <form action={() => {
+        <Form action={() => {
             startTransition(async () => {
                 try {
                     await deleteBlog(blogId);
@@ -25,6 +26,6 @@ export default function DeleteBlog({ blogId }: { blogId: string }) {
                     <Trash2 className="h-4 w-4" />
                 )}
             </Button>
-        </form>
+        </Form>
     )
 }

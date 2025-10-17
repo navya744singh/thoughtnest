@@ -1,8 +1,8 @@
 import SideBar from "@/components/dashboard/sidebar";
 import { Metadata } from "next";
-import BlogTable from "@/components/dashboard/blog-table";
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import BlogTableSkeleton from "@/components/dashboard/blog-table-skeleton";
+const BlogTable = lazy(() => import("@/components/dashboard/blog-table"));
 
 export const metadata: Metadata = {
   title: "Dashboard – Create Blogs and Manage Content",

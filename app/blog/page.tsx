@@ -16,6 +16,7 @@ export default async function Blog({ searchParams }: { searchParams: Promise<{ s
     const search = (await searchParams).search || "";
     const currentPage = Number((await searchParams).page) || 1;
 
+
     return (
         <main key={`blog-${search}-${currentPage}`}>
             <HeroSection title="Blog" subtitle="Read stories, ideas and insights that inspire." />

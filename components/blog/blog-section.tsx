@@ -5,7 +5,6 @@ import BlogPosts from "@/components/blog/blog-posts";
 import NoSearchResult from "@/components/blog/no-search-result";
 
 export default async function BlogSection({ search, currentPage }: { search: string; currentPage: number }) {
-
     const ITEMS_PER_PAGE = 3;
     const skip = (currentPage - 1) * ITEMS_PER_PAGE;
     const take = ITEMS_PER_PAGE;
@@ -39,11 +38,11 @@ export default async function BlogSection({ search, currentPage }: { search: str
             {
                 blogPosts.length > 0 ? (
                     <>
-                        <div className="grid md:grid-cols-3 gap-6 md:gap-4">
-                            {blogPosts.map((post, index) => (
-                                <BlogPosts key={post.id} post={post} index={index} />
-                            ))}
-                        </div>
+                            <div className="grid md:grid-cols-3 gap-6 md:gap-4">
+                                {blogPosts.map((post, index) => (
+                                    <BlogPosts key={post.id} post={post} index={index} />
+                                ))}
+                            </div>
 
                         { /* Pagination Placeholder */}
                         <div className="mt-16 flex justify-center gap-2">

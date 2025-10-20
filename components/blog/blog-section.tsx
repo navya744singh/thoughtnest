@@ -1,8 +1,13 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import BlogPosts from "@/components/blog/blog-posts";
+// import BlogPosts from "@/components/blog/blog-posts";
 import NoSearchResult from "@/components/blog/no-search-result";
+// import { Suspense } from "react";
+import BlogPostsSkeleton from "./blog-post-skeleton";
+
+import { lazy, Suspense } from "react";
+const BlogPosts = lazy(() => import("@/components/blog/blog-posts"));
 
 export default async function BlogSection({ search, currentPage }: { search: string; currentPage: number }) {
     const ITEMS_PER_PAGE = 3;
@@ -38,12 +43,13 @@ export default async function BlogSection({ search, currentPage }: { search: str
             {
                 blogPosts.length > 0 ? (
                     <>
+                        <Suspense fallback={<BlogPostsSkeleton />}>
                             <div className="grid md:grid-cols-3 gap-6 md:gap-4">
                                 {blogPosts.map((post, index) => (
                                     <BlogPosts key={post.id} post={post} index={index} />
                                 ))}
                             </div>
-
+                        </Suspense>
                         { /* Pagination Placeholder */}
                         <div className="mt-16 flex justify-center gap-2">
 

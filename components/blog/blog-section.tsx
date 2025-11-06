@@ -21,16 +21,16 @@ export default async function BlogSection({ search, currentPage }: { search: str
             take,
             where: search ? {
                 OR: [
-                    { title: { contains: search } },
-                    { category: { contains: search } },
+                    { title: { contains: search, mode: 'insensitive' } },
+                    { category: { contains: search, mode: 'insensitive' } },
                 ]
             } : undefined
         }),
         prisma.blog.count({
             where: search ? {
                 OR: [
-                    { title: { contains: search } },
-                    { category: { contains: search } },
+                    { title: { contains: search, mode: 'insensitive' } },
+                    { category: { contains: search, mode: 'insensitive' } },
                 ]
             } : undefined
         }),

@@ -5,7 +5,8 @@ import SearchBarSkeleton from "@/components/header/search-bar-skeleton";
 import * as motion from "motion/react-client";
 import { Metadata } from "next";
 import { lazy, Suspense } from "react";
-const BlogSection = lazy(() => import("@/components/blog/blog-section"));
+// const BlogSection = lazy(() => import("@/components/blog/blog-section"));
+import BlogSection from "@/components/blog/blog-section";
 
 export const metadata: Metadata = {
     title: "Blog – Stories That Inspire, Inform and Connect You",
